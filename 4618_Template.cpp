@@ -23,6 +23,7 @@
 #include "CControl.h"
 #include "CBase4618.h"
 #include "CSketch.h"
+#include "CPong.h"
 
 
 #define REDLED 39
@@ -447,6 +448,8 @@ void lab4()
 ////////////////////////////////////////////////////////////////
 void lab5()
 {
+    CPong pong(3, 750, 1000);
+    pong.run();
 }
 
 ////////////////////////////////////////////////////////////////
