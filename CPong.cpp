@@ -10,14 +10,10 @@ CPong::CPong(int comport, int rows, int cols)
 
 	cvui::init("Pong");
 
-	
-
 	freq = cv::getTickFrequency(); // Get tick frequency
 
 	start_tic = cv::getTickCount();	// Get number of ticks since event (such as computer on)
 
-
-	
 }
 
 CPong::~CPong()
@@ -40,6 +36,8 @@ void CPong::update()
 	auto end_time = std::chrono::system_clock::now() + std::chrono::milliseconds(8);
 
 
+
+
 	_joystick -= 50;
 	_joystick *= -1;
 
@@ -47,23 +45,23 @@ void CPong::update()
 	
 	if (_joystick > 2 || _joystick < -2)
 	{
-		_playerPaddleTL.y += _joystick / 5;
-		_playerPaddleBR.y += _joystick / 5;
-	}
-	/*
-	if (_playerPaddleTL.y <= 0)
-	{
-		_playerPaddleTL = { 980,0 };
-		_playerPaddleBR = { 1000,110 };
+		_playerPaddleTL.y += _joystick / 2;
+		_playerPaddleBR.y += _joystick / 2;
 	}
 
-	if(_playerPaddleBR.y >= 750)
+	if ( _playerPaddleTL.y <=0)
 	{
-		_playerPaddleTL = { 980,640 };
-		_playerPaddleBR = { 1000,750 };
-	}*/
+		_playerPaddleTL.y = 0;
+		_playerPaddleBR.y = _playerPaddleTL.y + _paddleHeight;
+	}
 
+	if (_playerPaddleBR.y >= 750)
+	{
+		_playerPaddleTL.y = 640;
+		_playerPaddleBR.y = 750;
+	}
 
+	
 
 	
 

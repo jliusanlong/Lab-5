@@ -15,16 +15,16 @@ public:
 	void draw();
 
 private:
-
+	
 	int frame = 0;
 	float FPS;
 
 	double start_tic, freq, elapsed_time;
 
 	bool _button_A;
-
-	cv::Point2i _compPaddleTL={0,430 }, _compPaddleBR={20,320 };
-	cv::Point2i _playerPaddleTL={ 980,430 }, _playerPaddleBR={ 1000,320 };
+	int _paddleHeight = 110;
+	cv::Point2f _compPaddleTL={0,320 }, _compPaddleBR={20,430 };
+	cv::Point2f _playerPaddleTL={ 980,320 }, _playerPaddleBR={ 1000,430 };
 
 	float _ballSize=25;
 	float _velocity = 200;
