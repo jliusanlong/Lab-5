@@ -15,6 +15,12 @@ public:
 	void draw();
 
 private:
+
+	int frame = 0;
+	float FPS;
+
+	double start_tic, freq, elapsed_time;
+
 	bool _button_A;
 
 	cv::Point2i _compPaddleTL={0,430 }, _compPaddleBR={20,320 };
